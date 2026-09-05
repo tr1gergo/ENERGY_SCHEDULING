@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peac-microgrid-study"
+version = "1.0.0"
+description = "Computational study for exact prosumer battery-scheduling algorithms"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.1",
+  "pandas>=2.2",
+  "matplotlib>=3.9",
+  "openpyxl>=3.1",
+  "pyyaml>=6.0",
+  "requests>=2.32",
+  "tqdm>=4.66",
+  "jupyterlab>=4.2",
+  "nbformat>=5.10",
+]
+
+[project.optional-dependencies]
+gurobi = ["gurobipy>=11.0"]
+test = ["pytest>=8.3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
